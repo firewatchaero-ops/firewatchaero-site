@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FireWatch — Short</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --red:#D8352A; --glow:#ff4433; --ember:#ff7a18; --amber:#ffb020; --grey:#8B8D93; --white:#F4F4F5; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%;background:transparent;overflow:hidden}
+  #stage{ position:absolute; inset:0; overflow:hidden; }
+  .layer{ position:absolute; inset:0; opacity:0; filter:blur(9px); transform-origin:center;
+    transition:opacity .9s ease, filter .9s ease; }
+  .layer.show{ opacity:1; filter:blur(0); }
+  .layer svg{ display:block; width:100%; height:100%; }
+  #flash{ position:absolute; inset:0; pointer-events:none; opacity:0;
+    background:radial-gradient(60% 50% at 50% 55%, rgba(255,122,24,.5), transparent 70%); }
+
+  .card{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; padding:8%; }
+  .card-logo{ width:80%; max-width:80%; mix-blend-mode:screen; filter:drop-shadow(0 0 34px rgba(216,53,42,.45)); }
+  .card-url{ font-family:'Orbitron',sans-serif; color:var(--glow); font-weight:700; letter-spacing:.22em; font-size:clamp(12px,3vw,24px); }
+  .card-tag{ font-family:'Orbitron',sans-serif; color:var(--grey); font-weight:600; letter-spacing:.14em; font-size:clamp(8px,1.7vw,13px); }
+  .card-in{ animation:cardIn 1.5s ease-out both; }
+  @keyframes cardIn{0%{opacity:0;transform:translateY(10px) scale(.95)}100%{opacity:1;transform:none}}
+
+  .layer svg [stroke-dasharray]{animation:dashFlow 2.6s linear infinite}
+  @keyframes dashFlow{to{stroke-dashoffset:-24}}
+  .layer svg circle[fill="#D8352A"]{transform-box:fill-box;transform-origin:center;animation:hotspot 2.2s ease-in-out infinite}
+  @keyframes hotspot{0%,100%{opacity:.65;transform:scale(.85)}50%{opacity:1;transform:scale(1.25)}}
+  .layer svg .smoke>*{transform-box:fill-box;transform-origin:center bottom;animation:smokeRise 3.6s ease-in infinite}
+  @keyframes smokeRise{0%{opacity:0;transform:translateY(8px) scale(.5)}25%{opacity:.4}100%{opacity:0;transform:translateY(-46px) scale(1.5)}}
+  .layer svg .smokeThick>*{transform-box:fill-box;transform-origin:center bottom;animation:smokeTall 4.6s ease-in infinite}
+  @keyframes smokeTall{0%{opacity:0;transform:translateY(10px) scale(.4)}18%{opacity:.55}100%{opacity:0;transform:translateY(-120px) scale(2.1)}}
+  .layer svg .grow2{transform-box:fill-box;transform-origin:center bottom;animation:growFire2 6.5s ease-out infinite}
+  @keyframes growFire2{0%,46%{transform:scale(.03);opacity:0}72%{transform:scale(1);opacity:1}100%{transform:scale(1);opacity:1}}
+  .layer svg .revealLate{animation:revLate 6.5s infinite}
+  @keyframes revLate{0%,52%{opacity:0}66%,100%{opacity:1}}
+  .layer svg .emberIn{opacity:0;animation:emberIn 6.5s ease-in infinite}
+  @keyframes emberIn{0%,50%{opacity:0}68%,100%{opacity:1}}
+  .layer svg .alertP,.layer svg .alertC{transform-box:fill-box}
+  .layer svg .alertP{animation:alertP 5.2s ease-out infinite}
+  @keyframes alertP{0%{opacity:0;transform:translateY(-6px)}12%,100%{opacity:1;transform:translateY(0)}}
+  .layer svg .alertC{animation:alertC 8s linear infinite}
+  @keyframes alertC{0%,50%{opacity:0;transform:translateY(-6px)}56%,100%{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="scene-base" viewBox="0 0 300 300">
+    <path d="M0 200 L55 176 L125 176 L190 214 L245 236 L300 240" stroke="#8B8D93" stroke-width="1.8" fill="none" opacity="0.55"/>
+    <path d="M12 175 L7 186 L17 186 Z M12 184 L5.5 195 L18.5 195 Z" fill="#8B8D93" opacity="0.4"/>
+    <path d="M28 168 L23 179 L33 179 Z M28 177 L21.5 188 L34.5 188 Z" fill="#8B8D93" opacity="0.4"/>
+    <path d="M42 162 L37 173 L47 173 Z M42 171 L35.5 182 L48.5 182 Z" fill="#8B8D93" opacity="0.4"/>
+    <path d="M130 159 L125 170 L135 170 Z M130 168 L123.5 179 L136.5 179 Z" fill="#8B8D93" opacity="0.4"/>
+    <path d="M145 168 L140 179 L150 179 Z M145 177 L138.5 188 L151.5 188 Z" fill="#8B8D93" opacity="0.4"/>
+    <path d="M160 176 L155 187 L165 187 Z M160 185 L153.5 196 L166.5 196 Z" fill="#8B8D93" opacity="0.4"/>
+    <path d="M175 185 L170 196 L180 196 Z M175 194 L168.5 205 L181.5 205 Z" fill="#8B8D93" opacity="0.4"/>
+    <path d="M200 198 L195 209 L205 209 Z M200 207 L193.5 218 L206.5 218 Z" fill="#8B8D93" opacity="0.4"/>
+    <path d="M214 204 L209 215 L219 215 Z M214 213 L207.5 224 L220.5 224 Z" fill="#8B8D93" opacity="0.4"/>
+    <path d="M228 209 L223 220 L233 220 Z M228 218 L221.5 229 L234.5 229 Z" fill="#8B8D93" opacity="0.4"/>
+    <path d="M234 212 L229 223 L239 223 Z M234 221 L227.5 232 L240.5 232 Z" fill="#8B8D93" opacity="0.4"/>
+    <path d="M258 217 L253 228 L263 228 Z M258 226 L251.5 237 L264.5 237 Z" fill="#8B8D93" opacity="0.4"/>
+    <path d="M270 218 L265 229 L275 229 Z M270 227 L263.5 238 L276.5 238 Z" fill="#8B8D93" opacity="0.4"/>
+    <path d="M282 219 L277 230 L287 230 Z M282 228 L275.5 239 L288.5 239 Z" fill="#8B8D93" opacity="0.4"/>
+    <path d="M294 220 L289 231 L299 231 Z M294 229 L287.5 240 L300.5 240 Z" fill="#8B8D93" opacity="0.4"/>
+    <g stroke="#F4F4F5" stroke-width="1.7" fill="none">
+      <path d="M74 176 L82 116 M106 176 L98 116"/>
+      <path d="M74 176 L98 116 M106 176 L82 116" stroke="#8B8D93" stroke-width="1.1" opacity="0.6"/>
+      <path d="M79 146 L101 146" stroke="#8B8D93" stroke-width="1.1" opacity="0.6"/>
+      <rect x="79" y="100" width="22" height="16"/>
+      <path d="M77 100 L90 88 L103 100"/>
+      <path d="M90 88 L90 80" stroke="#8B8D93" stroke-width="1.1"/>
+    </g>
+    <circle cx="90" cy="78" r="2" fill="#D8352A"><animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite"/></circle>
+  </symbol>
+</defs></svg>
+
+<div id="stage">
+  <div class="layer" id="layerA"></div>
+  <div class="layer" id="layerB"></div>
+  <div id="flash"></div>
+</div>
+
+<template id="tpl-title">
+  <div class="card"><img class="card-logo card-in" src="assets/logo.jpg" alt="FireWatch"></div>
+</template>
+
+<template id="tpl-s1">
+  <svg viewBox="0 0 300 300">
+    <use href="#scene-base" width="300" height="300"/>
+    <g stroke="#8B8D93" stroke-width="1.5" fill="none" opacity="0.85">
+      <path d="M236 232 L236 202"/><path d="M230 206 L242 206"/>
+      <path d="M262 237 L262 207"/><path d="M256 211 L268 211"/>
+      <path d="M236 205 Q249 219 262 210"/>
+    </g>
+    <g stroke="#8B8D93" stroke-width="1.4" fill="none" opacity="0.7">
+      <path d="M-6 0 Q-3 -4 0 0 Q3 -4 6 0"><animateMotion dur="7s" repeatCount="indefinite" path="M-20 70 Q150 45 330 82"/></path>
+      <path d="M-5 0 Q-2.5 -3 0 0 Q2.5 -3 5 0"><animateMotion dur="9s" repeatCount="indefinite" begin="-2s" path="M-20 98 Q150 72 330 58"/></path>
+      <path d="M-5 0 Q-2.5 -3 0 0 Q2.5 -3 5 0"><animateMotion dur="8s" repeatCount="indefinite" begin="-4s" path="M330 52 Q150 30 -20 66"/></path>
+    </g>
+  </svg>
+</template>
+
+<template id="tpl-s2">
+  <svg viewBox="0 0 300 300">
+    <use href="#scene-base" width="300" height="300"/>
+    <g class="emberIn">
+      <path d="M228 209 L223 220 L233 220 Z M228 218 L221.5 229 L234.5 229 Z" fill="#ff7a18" opacity="0.28"/>
+      <path d="M234 212 L229 223 L239 223 Z M234 221 L227.5 232 L240.5 232 Z" fill="#ff7a18" opacity="0.28"/>
+      <path d="M258 217 L253 228 L263 228 Z M258 226 L251.5 237 L264.5 237 Z" fill="#ff7a18" opacity="0.28"/>
+    </g>
+    <g stroke="#8B8D93" stroke-width="1.5" fill="none" opacity="0.85">
+      <path d="M236 232 L236 202"/><path d="M230 206 L242 206"/>
+    </g>
+    <g stroke="#8B8D93" stroke-width="1.5" fill="none" opacity="0.85">
+      <path d="M262 237 L262 207"/><path d="M256 211 L268 211"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 262 237;0 262 237;-62 262 237;-62 262 237" keyTimes="0;0.28;0.44;1" dur="6.5s" repeatCount="indefinite"/>
+    </g>
+    <path d="M236 205 Q249 219 262 210" stroke="#8B8D93" stroke-width="1.5" fill="none">
+      <animate attributeName="opacity" values="0.85;0.85;0;0" keyTimes="0;0.3;0.42;1" dur="6.5s" repeatCount="indefinite"/>
+    </path>
+    <circle cx="248" cy="232" r="0" fill="#ffb020">
+      <animate attributeName="r" values="0;0;5;0;0" keyTimes="0;0.42;0.47;0.55;1" dur="6.5s" repeatCount="indefinite"/>
+    </circle>
+    <g class="revealLate">
+      <g class="smoke" fill="#8B8D93">
+        <circle cx="248" cy="192" r="5" style="animation-delay:0s"/>
+        <circle cx="253" cy="180" r="6" style="animation-delay:1.1s"/>
+        <circle cx="244" cy="168" r="7" style="animation-delay:2.2s"/>
+      </g>
+    </g>
+    <g class="grow2">
+      <path d="M226 236 C229 214 238 217 239 200 C244 214 246 208 248 190 C250 208 252 214 257 200 C258 217 267 214 270 236 Z" fill="#D8352A" opacity="0.9"/>
+      <path d="M236 236 C238 222 244 223 244 213 C247 223 247 219 248 205 C249 219 249 223 252 213 C252 223 258 222 260 236 Z" fill="#ff7a18" opacity="0.95"/>
+      <circle cx="248" cy="236" r="5" fill="#D8352A"/>
+    </g>
+  </svg>
+</template>
+
+<template id="tpl-s3">
+  <svg viewBox="0 0 300 300">
+    <use href="#scene-base" width="300" height="300"/>
+    <path d="M228 209 L223 220 L233 220 Z M228 218 L221.5 229 L234.5 229 Z" fill="#ff7a18" opacity="0.28"/>
+    <path d="M234 212 L229 223 L239 223 Z M234 221 L227.5 232 L240.5 232 Z" fill="#ff7a18" opacity="0.28"/>
+    <path d="M258 217 L253 228 L263 228 Z M258 226 L251.5 237 L264.5 237 Z" fill="#ff7a18" opacity="0.28"/>
+    <g stroke="#8B8D93" stroke-width="1.3" fill="none" opacity="0.5"><path d="M236 232 L236 202"/><path d="M230 206 L242 206"/><path d="M262 237 L235 223"/></g>
+    <path d="M88 98 L248 88 L252 138 L92 108 Z" fill="#ff7a18" opacity="0.12"/>
+    <path d="M90 103 L250 112" stroke="#ff7a18" stroke-width="1.2" stroke-dasharray="4 4" fill="none" opacity="0.55"/>
+    <g class="smokeThick" fill="#8B8D93">
+      <circle cx="248" cy="196" r="7" style="animation-delay:0s"/>
+      <circle cx="253" cy="184" r="8" style="animation-delay:0.7s"/>
+      <circle cx="243" cy="172" r="9" style="animation-delay:1.4s"/>
+      <circle cx="250" cy="160" r="10" style="animation-delay:2.1s"/>
+      <circle cx="245" cy="150" r="10" style="animation-delay:2.8s"/>
+      <circle cx="251" cy="140" r="11" style="animation-delay:3.5s"/>
+    </g>
+    <path d="M226 236 C229 214 238 217 239 200 C244 214 246 208 248 190 C250 208 252 214 257 200 C258 217 267 214 270 236 Z" fill="#D8352A" opacity="0.9"/>
+    <path d="M236 236 C238 222 244 223 244 213 C247 223 247 219 248 205 C249 219 249 223 252 213 C252 223 258 222 260 236 Z" fill="#ff7a18" opacity="0.95"/>
+    <circle cx="248" cy="236" r="5" fill="#D8352A"/>
+    <g class="alertP">
+      <rect x="66" y="14" width="168" height="28" rx="5" fill="#141517" stroke="#ff7a18" stroke-width="1.4"/>
+      <circle cx="84" cy="28" r="4" fill="#ff7a18"/>
+      <text x="96" y="32" fill="#ff7a18" font-family="Orbitron, sans-serif" font-size="12" font-weight="700" letter-spacing="1.4">POSSIBLE FIRE</text>
+    </g>
+  </svg>
+</template>
+
+<template id="tpl-s4">
+  <svg viewBox="0 0 300 300">
+    <use href="#scene-base" width="300" height="300"/>
+    <path d="M228 209 L223 220 L233 220 Z M228 218 L221.5 229 L234.5 229 Z" fill="#ff7a18" opacity="0.28"/>
+    <path d="M234 212 L229 223 L239 223 Z M234 221 L227.5 232 L240.5 232 Z" fill="#ff7a18" opacity="0.28"/>
+    <path d="M258 217 L253 228 L263 228 Z M258 226 L251.5 237 L264.5 237 Z" fill="#ff7a18" opacity="0.28"/>
+    <g stroke="#8B8D93" stroke-width="1.3" fill="none" opacity="0.5"><path d="M236 232 L236 202"/><path d="M230 206 L242 206"/><path d="M262 237 L235 223"/></g>
+    <path d="M103 92 C150 90 215 128 248 142" stroke="#D8352A" stroke-width="1.6" stroke-dasharray="4 4" fill="none" opacity="0.8"/>
+    <g class="smokeThick" fill="#8B8D93">
+      <circle cx="248" cy="196" r="7" style="animation-delay:0s"/>
+      <circle cx="253" cy="184" r="8" style="animation-delay:0.7s"/>
+      <circle cx="243" cy="172" r="9" style="animation-delay:1.4s"/>
+      <circle cx="250" cy="160" r="10" style="animation-delay:2.1s"/>
+      <circle cx="245" cy="150" r="10" style="animation-delay:2.8s"/>
+    </g>
+    <path d="M226 236 C229 214 238 217 239 200 C244 214 246 208 248 190 C250 208 252 214 257 200 C258 217 267 214 270 236 Z" fill="#D8352A" opacity="0.9"/>
+    <path d="M236 236 C238 222 244 223 244 213 C247 223 247 219 248 205 C249 219 249 223 252 213 C252 223 258 222 260 236 Z" fill="#ff7a18" opacity="0.95"/>
+    <circle cx="248" cy="236" r="5" fill="#D8352A"/>
+    <path d="M248 150 L230 232 L266 232 Z" fill="#ff7a18" opacity="0">
+      <animate attributeName="opacity" dur="8s" repeatCount="indefinite" values="0;0;0.12;0.12" keyTimes="0;0.19;0.23;1"/>
+    </path>
+    <line x1="248" y1="152" x2="232" y2="232" stroke="#ffb020" stroke-width="3" opacity="0">
+      <animate attributeName="x2" values="230;266;230" dur="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0;0.55;0.55" keyTimes="0;0.2;0.24;1" dur="8s" repeatCount="indefinite"/>
+    </line>
+    <g stroke="#F4F4F5" stroke-width="1.6">
+      <line x1="-18" y1="-8" x2="18" y2="8"/><line x1="-18" y1="8" x2="18" y2="-8"/>
+      <ellipse cx="-18" cy="-8" rx="7" ry="3"/><ellipse cx="18" cy="-8" rx="7" ry="3"/>
+      <ellipse cx="-18" cy="8" rx="7" ry="3"/><ellipse cx="18" cy="8" rx="7" ry="3"/>
+      <rect x="-6" y="-6" width="12" height="12" rx="1.5" fill="#141517" stroke="#F4F4F5" stroke-width="1.4"/>
+      <animateMotion dur="8s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.19;1" path="M103 92 C150 90 215 128 248 142"/>
+    </g>
+    <g class="alertC">
+      <rect x="58" y="14" width="184" height="28" rx="5" fill="#141517" stroke="#D8352A" stroke-width="1.4"/>
+      <circle cx="76" cy="28" r="4" fill="#ff4433"/>
+      <text x="88" y="32" fill="#ff4433" font-family="Orbitron, sans-serif" font-size="12" font-weight="700" letter-spacing="1.4">FIRE CONFIRMED</text>
+    </g>
+  </svg>
+</template>
+
+<template id="tpl-s5">
+  <svg viewBox="0 0 300 300">
+    <defs>
+      <clipPath id="s5c1"><rect x="90" y="0" width="0" height="300"><animate attributeName="width" values="0;0;185;185" keyTimes="0;0.05;0.4;1" dur="8s" repeatCount="indefinite"/></rect></clipPath>
+      <clipPath id="s5c2"><rect x="90" y="0" width="0" height="300"><animate attributeName="width" values="0;0;185;185" keyTimes="0;0.2;0.55;1" dur="8s" repeatCount="indefinite"/></rect></clipPath>
+      <clipPath id="s5c3"><rect x="90" y="0" width="0" height="300"><animate attributeName="width" values="0;0;185;185" keyTimes="0;0.35;0.7;1" dur="8s" repeatCount="indefinite"/></rect></clipPath>
+    </defs>
+    <use href="#scene-base" width="300" height="300"/>
+    <path d="M228 209 L223 220 L233 220 Z M228 218 L221.5 229 L234.5 229 Z" fill="#ff7a18" opacity="0.28"/>
+    <path d="M234 212 L229 223 L239 223 Z M234 221 L227.5 232 L240.5 232 Z" fill="#ff7a18" opacity="0.28"/>
+    <path d="M258 217 L253 228 L263 228 Z M258 226 L251.5 237 L264.5 237 Z" fill="#ff7a18" opacity="0.28"/>
+    <g stroke="#8B8D93" stroke-width="1.3" fill="none" opacity="0.5"><path d="M236 232 L236 202"/><path d="M230 206 L242 206"/><path d="M262 237 L235 223"/></g>
+    <path d="M100 96 Q180 86 246 176" stroke="#D8352A" stroke-width="1.5" stroke-dasharray="4 4" fill="none" opacity="0.8" clip-path="url(#s5c1)"/>
+    <path d="M100 100 Q185 132 250 192" stroke="#D8352A" stroke-width="1.5" stroke-dasharray="4 4" fill="none" opacity="0.8" clip-path="url(#s5c2)"/>
+    <path d="M100 104 Q192 168 252 200" stroke="#D8352A" stroke-width="1.5" stroke-dasharray="4 4" fill="none" opacity="0.8" clip-path="url(#s5c3)"/>
+    <g class="smoke" fill="#8B8D93">
+      <circle cx="248" cy="192" r="5" style="animation-delay:0s"/>
+      <circle cx="253" cy="180" r="6" style="animation-delay:1.1s"/>
+      <circle cx="244" cy="168" r="7" style="animation-delay:2.2s"/>
+    </g>
+    <path d="M226 236 C229 214 238 217 239 200 C244 214 246 208 248 190 C250 208 252 214 257 200 C258 217 267 214 270 236 Z" fill="#D8352A" opacity="0.9"/>
+    <path d="M236 236 C238 222 244 223 244 213 C247 223 247 219 248 205 C249 219 249 223 252 213 C252 223 258 222 260 236 Z" fill="#ff7a18" opacity="0.95"/>
+    <circle cx="248" cy="236" r="5" fill="#D8352A"/>
+    <path d="M248 118 L232 200 L266 200 Z" fill="#ff7a18" opacity="0.07"/>
+    <g fill="#F4F4F5"><path d="M8 0 L-8 -5 L-3 0 L-8 5 Z"/><animateMotion dur="8s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.05;0.4;1" path="M100 96 Q180 86 246 176"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.05;0.06;0.4;0.41;1" dur="8s" repeatCount="indefinite"/></g>
+    <g fill="#F4F4F5"><path d="M8 0 L-8 -5 L-3 0 L-8 5 Z"/><animateMotion dur="8s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.2;0.55;1" path="M100 100 Q185 132 250 192"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.2;0.21;0.55;0.56;1" dur="8s" repeatCount="indefinite"/></g>
+    <g fill="#F4F4F5"><path d="M8 0 L-8 -5 L-3 0 L-8 5 Z"/><animateMotion dur="8s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.35;0.7;1" path="M100 104 Q192 168 252 200"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.35;0.36;0.7;0.71;1" dur="8s" repeatCount="indefinite"/></g>
+    <g fill="#F4F4F5"><path d="M8 0 L-8 -5 L-3 0 L-8 5 Z"/><animateMotion dur="8s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.5;0.85;1" path="M100 96 Q180 86 246 176"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.5;0.51;0.85;0.86;1" dur="8s" repeatCount="indefinite"/></g>
+    <g fill="#F4F4F5"><path d="M8 0 L-8 -5 L-3 0 L-8 5 Z"/><animateMotion dur="8s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.62;0.95;1" path="M100 100 Q185 132 250 192"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.62;0.63;0.95;0.96;1" dur="8s" repeatCount="indefinite"/></g>
+    <g stroke="#F4F4F5" stroke-width="1.6">
+      <line x1="230" y1="96" x2="266" y2="112"/><line x1="230" y1="112" x2="266" y2="96"/>
+      <ellipse cx="230" cy="96" rx="7" ry="3"/><ellipse cx="266" cy="96" rx="7" ry="3"/>
+      <ellipse cx="230" cy="112" rx="7" ry="3"/><ellipse cx="266" cy="112" rx="7" ry="3"/>
+      <rect x="242" y="98" width="12" height="12" rx="1.5" fill="#141517" stroke="#F4F4F5" stroke-width="1.4"/>
+    </g>
+    <g>
+      <rect x="70" y="14" width="160" height="26" rx="5" fill="#141517" stroke="#ff7a18" stroke-width="1.4"/>
+      <text class="s5pct" x="86" y="31" fill="#ff7a18" font-family="Orbitron, sans-serif" font-size="12" font-weight="700" letter-spacing="1">CONTAINED: 20%</text>
+      <rect x="72" y="44" width="156" height="4" rx="2" fill="#141517" stroke="#8B8D93" stroke-width="0.5" opacity="0.5"/>
+      <rect class="s5bar" x="72" y="44" width="2" height="4" rx="2" fill="#ff7a18"/>
+    </g>
+  </svg>
+</template>
+
+<template id="tpl-end">
+  <div class="card">
+    <img class="card-logo card-in" src="assets/logo.jpg" alt="FireWatch">
+    <div class="card-url card-in">firewatchaero.com</div>
+    <div class="card-tag card-in">© 2026 FireWatch. All rights reserved.</div>
+  </div>
+</template>
+
+<script>
+(function(){
+  var A=document.getElementById('layerA'), B=document.getElementById('layerB');
+  var flash=document.getElementById('flash');
+  var layers=[A,B], cur=0, timer=null, rafId=null;
+  var TXR=900;
+
+  var seq=[
+    ['title',4200],['s1',5200],['s2',6500],['s3',5200],['s4',8000],['s5',8000],['end',4600]
+  ];
+
+  function stopCounter(){ if(rafId){ cancelAnimationFrame(rafId); rafId=null; } }
+  function startCounter(root){
+    var pct=root.querySelector('.s5pct'), bar=root.querySelector('.s5bar');
+    var t0=performance.now(), DUR=8000;
+    function fr(now){
+      var t=Math.min(1,(now-t0)/DUR), v;
+      if(t<0.4){ v=20; } else { v=Math.round(20+30*Math.min(1,(t-0.4)/0.55)); }
+      if(pct) pct.textContent='CONTAINED: '+v+'%';
+      if(bar) bar.setAttribute('width',(2+(v-20)/30*152).toFixed(1));
+      if(t<1) rafId=requestAnimationFrame(fr);
+    }
+    rafId=requestAnimationFrame(fr);
+  }
+
+  function activate(i){
+    var name=seq[i][0], cyc=seq[i][1];
+    var inL=layers[(cur+1)%2], outL=layers[cur];
+    inL.innerHTML = document.getElementById('tpl-'+name).innerHTML;
+    if(inL._push){ inL._push.cancel(); }
+    if(inL.animate){ inL._push=inL.animate([{transform:'scale(1)'},{transform:'scale(1.05)'}],{duration:cyc, easing:'linear', fill:'forwards'}); }
+    stopCounter();
+    if(name==='s5'){ startCounter(inL); }
+    void inL.offsetWidth;
+    inL.classList.add('show'); outL.classList.remove('show');
+    if(i>0 && flash.animate){ flash.animate([{opacity:0},{opacity:0.10},{opacity:0}],{duration:900, easing:'ease-out'}); }
+    cur=(cur+1)%2;
+    var next=(i<seq.length-1)?(i+1):0;          // loop forever
+    timer=setTimeout(function(){ activate(next); }, cyc-TXR);
+  }
+
+  function play(){
+    clearTimeout(timer); stopCounter();
+    layers.forEach(function(l){ if(l._push) l._push.cancel(); l.classList.remove('show'); l.innerHTML=''; });
+    cur=0; activate(0);
+  }
+
+  if(document.readyState==='complete'){ play(); }
+  else { window.addEventListener('load', play); }
+})();
+</script>
+</body>
+</html>
