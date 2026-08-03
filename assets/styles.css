@@ -140,8 +140,12 @@ header.hero {
 @keyframes spin { to { transform: rotate(360deg); } }
 header.hero .container { position: relative; z-index: 2; }
 .hero-logo {
-  width: 220px; margin: 0 auto 20px; display: block;
-  filter: drop-shadow(0 0 40px rgba(216,53,42,0.5));
+  width: 320px; max-width: 82vw; margin: 0 auto 12px; display: block;
+  /* The logo JPG has a near-black background; "screen" melts that
+     dark box into the page so only the flame + wordmark read, letting
+     the embers and glow show through behind it. */
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 0 46px rgba(216,53,42,0.55));
   animation: floaty 6s ease-in-out infinite;
 }
 @keyframes floaty {

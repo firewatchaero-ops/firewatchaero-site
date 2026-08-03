@@ -34,9 +34,9 @@
 
 <header class="page-hero">
   <div class="container">
-    <span class="section-tag">// About Us</span>
+    <span class="section-tag">About Us</span>
     <h1>The person behind FireWatch</h1>
-    <p>One founder, a working prototype, and a bet that early detection can change how wildfires are fought.</p>
+    <p>One founder, a working prototype, and a bet that the first hour of a wildfire is a solvable problem.</p>
   </div>
 </header>
 
@@ -45,34 +45,47 @@
     <div class="about-grid">
       <div>
         <div class="about-photo">
-          <!-- Replace this placeholder with the founder photo: assets/adib.jpg -->
-          <div class="placeholder">Founder photo<br>coming soon</div>
+          <img src="assets/adib.jpg" alt="Adib, founder of FireWatch">
         </div>
         <div class="about-name">Adib</div>
         <div class="about-role">Founder &amp; CEO</div>
       </div>
 
       <div class="about-text">
-        <p>FireWatch started as a personal engineering project, not a business plan. I built the first version of the system myself — the drone hardware, the thermal sensing, the radio link, and the ground station dashboard — because I wanted to know whether cheap, off-the-shelf components could catch a fire earlier than the systems currently used to detect them.</p>
-        <p>The core problem stuck with me: by the time a wildfire or structural fire is confirmed through existing methods, it has often already grown past the point where it could have been contained easily. Ground sensors don't cover enough area. Satellites pass too infrequently. Manned aircraft are expensive and grounded at night or in bad weather. There was a real gap between the first spark and the first response — and closing that gap didn't require exotic technology, just the right combination of a thermal sensor, a long-range radio link, and a drone.</p>
-        <p>I built the working prototype solo — hardware, firmware, the RF link, and the web dashboard — and it proved the core idea works: a small autonomous system can detect heat signatures in real time without relying on the internet or cellular coverage.</p>
-        <p>FireWatch is still early. It's self-funded, pre-revenue, and I'm the only person on it today. This site exists to document that progress honestly, and to start the conversations — with fire agencies, industrial partners, and eventually a team — that will take it from a working prototype to something deployed in the field.</p>
+        <p>FireWatch started with the January 2025 Los Angeles wildfires. I watched entire neighborhoods burn — the Palisades, Altadena, Eaton — and kept coming back to the same thought: every one of those fires was catastrophic by the time it could really be fought, but every one of them started small. Somewhere in those first minutes and hours there was a window to catch it and hold it, and nothing existed to act inside that window. There could have been a solution. Nobody had built it. So I decided to.</p>
+        <p>I built the first version of the system myself — the drone hardware, the thermal sensing, the radio link, and the ground station dashboard — to find out whether cheap, off-the-shelf components could detect a fire earlier than the tools agencies rely on today. They could.</p>
+        <p>But the deeper problem isn't only detection — it's the gap between the first spark and the first resources on the fire. In remote terrain, water and crews can be hours away, and wildfires grow exponentially in that time. FireWatch is built to close that gap in three layers: fire watch towers that scan for smoke, a <strong>mothership drone</strong> that flies out to confirm and map the fire, and a swarm of <strong>payload gliders</strong> that keep it small until responders arrive with heavier resources.</p>
+        <p>Right now I'm focused on <strong>Phase 1</strong> — the mothership drone that can fly to a suspected ignition, confirm it with onboard thermal and AI, and report its exact location back to the people who can act on it. FireWatch is still early: self-funded, pre-revenue, and a solo effort today. This site documents that progress honestly, and starts the conversations — with fire agencies, government partners, and eventually a team — that turn a working prototype into something deployed in the field.</p>
       </div>
     </div>
 
     <div class="timeline">
       <div class="timeline-item">
+        <div class="timeline-year">Jan 2025</div>
+        <div>
+          <h4>The LA fires — the idea</h4>
+          <p>Watching the Palisades and Eaton fires, I became convinced the first hour of a wildfire was a solvable problem no one was solving — and started designing FireWatch.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
         <div class="timeline-year">2026</div>
         <div>
           <h4>Prototype validated</h4>
-          <p>Working drone + ground station system: live thermal streaming, private radio link, real-time alerting dashboard.</p>
+          <p>Working drone + ground station: live thermal streaming over a private radio link, with real-time alerting — proof that early autonomous detection works.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">Now</div>
+        <div>
+          <h4>Phase 1 — the mothership</h4>
+          <p>Building the drone that flies to a suspected ignition, confirms the fire with onboard thermal and AI, and relays its exact location to the crews who can respond.</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-year">Next</div>
         <div>
-          <h4>Autonomous flight &amp; outreach</h4>
-          <p>Moving toward autonomous patrol, GPS-tagged reporting, and first conversations with fire agencies and industrial land operators.</p>
+          <h4>Towers &amp; containment</h4>
+          <p>Autonomous detection towers that dispatch the mothership on their own, and the glider swarm that contains fires until responders arrive — plus the first conversations with fire agencies and government partners.</p>
         </div>
       </div>
     </div>
@@ -81,7 +94,7 @@
 
 <footer id="contact">
   <div class="container">
-    <span class="section-tag">// Contact</span>
+    <span class="section-tag">Contact</span>
     <h2>Let's talk</h2>
     <p>Fire agencies, land managers, industrial safety teams, and partners — reach out.</p>
     <a class="cta-btn" href="mailto:amazloom@firewatchaero.com">amazloom@firewatchaero.com</a>

@@ -57,7 +57,7 @@
     <img src="assets/logo.jpg" alt="FireWatch" class="hero-logo">
     <h1>FIREWATCH</h1>
     <div class="hero-sub">Extinguish with Precision</div>
-    <p class="hero-desc">Autonomous aerial systems that detect fires the moment they ignite — and one day, strike them before they spread.</p>
+    <p class="hero-desc">Autonomous aerial systems that detect fires the moment they ignite — and hold them in check until greater resources arrive.</p>
     <div class="hero-badge">Seed Stage · 2026</div>
 
     <div class="stats">
@@ -79,21 +79,21 @@
 
 <section id="problem">
   <div class="container">
-    <span class="section-tag">// The Problem</span>
-    <h2>Every existing detection method has a critical gap</h2>
-    <p class="lead">There is no cheap, always-on, autonomous system that watches for fires before they become uncontrollable. By the time a fire is confirmed, it has already grown.</p>
+    <span class="section-tag">The Problem</span>
+    <h2>Wildfires are won or lost in the first hour</h2>
+    <p class="lead">A wildfire grows exponentially. While it's small, it's containable — but in remote terrain, both halves of the response are too slow. It takes too long to confirm a fire, and even longer for the first water or retardant to reach it. By the time planes, crews, and drones arrive, a spark has become a fire front.</p>
     <div class="grid-3">
       <div class="card">
-        <h3>Satellites</h3>
-        <p>Global coverage, but passes every 6–12 hours at low resolution, with no real-time alerting.</p>
+        <h3>Detection is too slow</h3>
+        <p>Satellites pass every few hours, towers need line of sight, and crews rely on someone reporting smoke. A remote ignition can burn unnoticed for 15–30 minutes or more before anyone confirms it.</p>
       </div>
       <div class="card">
-        <h3>Camera Towers</h3>
-        <p>Continuous monitoring, but fixed coverage radius and requires dense deployment with direct line of sight.</p>
+        <h3>The first response is even slower</h3>
+        <p>Once a fire is confirmed, water and retardant still have to travel to it. In the backcountry, aircraft, engines, and hand crews can be hours away — and every one of those minutes lets the fire grow.</p>
       </div>
       <div class="card">
-        <h3>Manned Aircraft</h3>
-        <p>Flexible and high-resolution, but grounded in poor weather, not available 24/7, and reactive rather than proactive.</p>
+        <h3>Fire grows exponentially</h3>
+        <p>Wildfires spread fastest in their later stages. A few extra minutes early on is the difference between a spot fire and a megafire — and between a routine knockdown and a season-defining disaster.</p>
       </div>
     </div>
   </div>
@@ -101,9 +101,9 @@
 
 <section id="plan">
   <div class="container">
-    <span class="section-tag">// The Plan</span>
-    <h2>Where FireWatch is headed</h2>
-    <p class="lead">The prototype proves detection works. The roadmap moves from watching a fire to acting on one.</p>
+    <span class="section-tag">The Plan</span>
+    <h2>How FireWatch fights a fire</h2>
+    <p class="lead">The full system is a chain: towers watch the horizon, a mothership drone confirms and maps the fire, and a swarm of payload gliders contains it — all coordinated automatically and visible to the agencies responding. We're building it one proven layer at a time, starting with the mothership.</p>
 
     <div class="roadmap">
 
@@ -117,14 +117,14 @@
             <circle cx="130" cy="47" r="3" fill="#D8352A"/>
             <path d="M60 200 Q130 150 200 200" stroke="#8B8D93" stroke-width="1.5" stroke-dasharray="2 4"/>
             <path d="M110 20 L130 5 L150 20" stroke="#F4F4F5" stroke-width="2" fill="none"/>
-            <text x="130" y="212" fill="#8B8D93" font-size="10" text-anchor="middle" font-family="Rajdhani">GROUND STATION LINK</text>
+            <text x="130" y="212" fill="#8B8D93" font-size="10" text-anchor="middle" font-family="Rajdhani">MOTHERSHIP · CONFIRM + RELAY</text>
           </svg>
         </div>
         <div class="roadmap-text">
-          <div class="roadmap-phase">Phase 1</div>
-          <h3>Detect</h3>
-          <p>A drone-mounted thermal camera scans continuously and streams live heat data over a private long-range radio link to a ground dashboard — no internet, no cellular, no cloud dependency.</p>
-          <span class="roadmap-status live">● Working Prototype</span>
+          <div class="roadmap-phase">Phase 1 · Building Now</div>
+          <h3>Confirm — The Mothership</h3>
+          <p>A tower-based mothership drone flies to a suspected ignition, and its onboard thermal camera and AI confirm whether there's a fire, pinpoint its exact location, and map its edges. It relays a confirmed report to nearby crews through our monitoring software — turning a distant smoke sighting into precise, actionable coordinates in minutes.</p>
+          <span class="roadmap-status live">● In Development</span>
         </div>
       </div>
 
@@ -146,13 +146,13 @@
             <circle cx="60" cy="150" r="4" fill="#D8352A"/>
             <circle cx="200" cy="150" r="4" fill="#D8352A"/>
             <circle cx="130" cy="40" r="4" fill="#D8352A"/>
-            <text x="130" y="205" fill="#8B8D93" font-size="10" text-anchor="middle" font-family="Rajdhani">AUTONOMOUS FLIGHT + FLEET COORDINATION</text>
+            <text x="130" y="205" fill="#8B8D93" font-size="10" text-anchor="middle" font-family="Rajdhani">WATCH TOWERS · DETECT + DISPATCH</text>
           </svg>
         </div>
         <div class="roadmap-text">
           <div class="roadmap-phase">Phase 2</div>
-          <h3>Patrol Autonomously</h3>
-          <p>Remove the human pilot. GPS-tagged fire reporting, autonomous flight paths, and a fleet of drones patrolling a defined territory around the clock — reporting position and status back to the ground station.</p>
+          <h3>Watch — Autonomous Towers</h3>
+          <p>Fire watch towers — partnered state towers or our own autonomous ones — carry cameras, thermal sights, and sensors that scan the horizon for smoke and heat. When the AI believes a fire has started, it dispatches the mothership to investigate on its own, no human trigger required. Each tower hosts the mothership and becomes the launch point for everything that follows.</p>
           <span class="roadmap-status next">○ Next Up</span>
         </div>
       </div>
@@ -171,13 +171,13 @@
             <polygon points="188,88 196,90 190,96" fill="#D8352A"/>
             <polygon points="213,138 221,140 215,146" fill="#D8352A"/>
             <path d="M195 165 Q205 150 220 155 Q235 145 240 160 Q248 165 240 175 Q245 185 230 185 Q210 195 200 180 Q190 178 195 165Z" fill="#D8352A" opacity="0.85"/>
-            <text x="130" y="212" fill="#8B8D93" font-size="10" text-anchor="middle" font-family="Rajdhani">TUBE-LAUNCHED SUPPRESSANT SWARM</text>
+            <text x="130" y="212" fill="#8B8D93" font-size="10" text-anchor="middle" font-family="Rajdhani">GLIDER SWARM · PAYLOAD CONTAINMENT</text>
           </svg>
         </div>
         <div class="roadmap-text">
           <div class="roadmap-phase">Phase 3</div>
-          <h3>Strike Early Ignitions</h3>
-          <p>A tube-launched, folding-wing swarm deploys from a mountaintop mothership station. Each unit glides to an assigned hotspot, refines its aimpoint with an onboard thermal seeker, and delivers fire suppressant — knocking down spot fires in the first critical minutes.</p>
+          <h3>Contain — The Glider Swarm</h3>
+          <p>Once the fire is confirmed, the mothership signals drone launchers at its tower and on surrounding mountaintops to release payload gliders. Each glider extends its wings, cruises to the fire at up to 80 mph, and uses its own thermal camera and AI to adjust course mid-flight before dropping a fire-suppressant payload. The mothership choreographs the whole swarm — flight paths, release points, and calling in more gliders when the fire demands it — holding the fire small until crews arrive with heavier resources.</p>
           <span class="roadmap-status next">○ In Design</span>
         </div>
       </div>
@@ -188,7 +188,7 @@
 
 <section id="how">
   <div class="container">
-    <span class="section-tag">// Current Prototype</span>
+    <span class="section-tag">Current Prototype</span>
     <h2>How it works today</h2>
     <p class="lead">The entire pipeline is self-contained. Both devices auto-connect and start streaming on boot — no manual setup, no cloud, no internet.</p>
     <div class="pipeline">
@@ -223,24 +223,24 @@
 
 <section id="model">
   <div class="container">
-    <span class="section-tag">// Business Model</span>
-    <h2>From hardware to a data platform</h2>
-    <p class="lead">FireWatch is pre-revenue and not currently for sale. This is the direction the business is expected to take as it matures.</p>
+    <span class="section-tag">Business Model</span>
+    <h2>Built for the agencies that fight fires</h2>
+    <p class="lead">FireWatch is designed for local, state, and national governments — the fire and land-management agencies responsible for protecting wildland. It isn't a consumer product, though in principle it could cover rural communities far from help. We're pre-revenue today; this is how the model is built to work.</p>
     <div class="model-grid">
       <div class="model-card active">
-        <div class="model-tag">Near-Term</div>
-        <h4>Hardware Sales</h4>
-        <p>Turnkey detection systems sold to government agencies and industrial operators. Ship, deploy, support.</p>
+        <div class="model-tag">One-Time</div>
+        <h4>Setup &amp; Installation</h4>
+        <p>Standing up coverage for a region: mothership drones, tower sensors, and mountaintop launchers — either integrated into existing fire watch towers or deployed as our own autonomous ones.</p>
       </div>
       <div class="model-card">
-        <div class="model-tag">Mid-Term</div>
-        <h4>Monitoring-as-a-Service</h4>
-        <p>Ongoing aerial coverage subscriptions. Fleet of drones, cloud alerting backend, SLA-backed response.</p>
+        <div class="model-tag">Annual</div>
+        <h4>System &amp; Software</h4>
+        <p>A yearly fee to keep the system maintained and the software current, including access to the monitoring platform for local and state authorities coordinating the response.</p>
       </div>
       <div class="model-card">
-        <div class="model-tag">Long-Term</div>
-        <h4>Data Platform / Licensing</h4>
-        <p>Aggregate thermal data across deployments. License algorithms or sell API access to insurers and agencies.</p>
+        <div class="model-tag">Ongoing</div>
+        <h4>Payload &amp; Fleet Resupply</h4>
+        <p>The core recurring cost: refilling glider suppressant payloads and replacing the gliders staged across mountaintop launchers after each deployment, so the system is always ready for the next fire.</p>
       </div>
     </div>
   </div>
@@ -248,7 +248,7 @@
 
 <footer id="contact">
   <div class="container">
-    <span class="section-tag">// Contact</span>
+    <span class="section-tag">Contact</span>
     <h2>Let's talk</h2>
     <p>Fire agencies, land managers, industrial safety teams, and partners — reach out.</p>
     <a class="cta-btn" href="mailto:amazloom@firewatchaero.com">amazloom@firewatchaero.com</a>
