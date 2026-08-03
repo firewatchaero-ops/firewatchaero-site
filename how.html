@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How It Works — FireWatch</title>
+<meta name="description" content="The FireWatch prototype is fully self-contained: thermal sensing, an onboard processor, a private radio link, and a live ground-station dashboard — no cloud, no internet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a class="brand-mark" href="index.html">
+      <img src="assets/logo.jpg" alt="FireWatch logo">
+    </a>
+    <ul>
+      <li><a href="problem.html">Problem</a></li>
+      <li><a href="plan.html">The Plan</a></li>
+      <li><a href="how.html" class="active">How It Works</a></li>
+      <li><a href="business.html">Business</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="container">
+    <span class="section-tag">Current Prototype</span>
+    <h1>How it works today</h1>
+    <p>The entire pipeline is self-contained. Both devices auto-connect and start streaming on boot — no manual setup, no cloud, no internet.</p>
+  </div>
+</header>
+
+<section style="border-top: none; padding-top: 0;">
+  <div class="container">
+    <div class="pipeline">
+      <div class="pipe-step">
+        <div class="pipe-num">01</div>
+        <h4>Thermal Camera</h4>
+        <p>Reads 768 temperature points 4× per second. Detects heat invisible to the human eye.</p>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-num">02</div>
+        <h4>Drone Processor</h4>
+        <p>Onboard Pi processes the stream and transmits over a private radio link.</p>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-num">03</div>
+        <h4>HaLow Radio Link</h4>
+        <p>900 MHz link carries data kilometers with no cellular coverage needed.</p>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-num">04</div>
+        <h4>Ground Station</h4>
+        <p>Second Pi hosts a live web dashboard accessible from any browser.</p>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-num">05</div>
+        <h4>Live Alert</h4>
+        <p>Operator is alerted instantly when temperature exceeds threshold.</p>
+      </div>
+    </div>
+    <p class="lead" style="margin-top: 48px;">This prototype is the foundation for Phase 1 — the same thermal sensing, private link, and live reporting, carried by a mothership drone that flies to a fire, confirms it, and relays its exact location to the crews who can respond.</p>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="container">
+    <span class="section-tag">Contact</span>
+    <h2>Let's talk</h2>
+    <p>Fire agencies, land managers, industrial safety teams, and partners — reach out.</p>
+    <a class="cta-btn" href="mailto:amazloom@firewatchaero.com">amazloom@firewatchaero.com</a>
+    <div class="fine-print">FireWatch © 2026. Prototype stage — not yet available for purchase or deployment.</div>
+  </div>
+</footer>
+
+<script src="assets/fx.js" defer></script>
+</body>
+</html>

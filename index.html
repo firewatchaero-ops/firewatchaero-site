@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FireWatch — Extinguish with Precision</title>
-<meta name="description" content="FireWatch is an autonomous aerial fire-detection and suppression system. Catch it early. End it fast.">
+<meta name="description" content="FireWatch is an autonomous aerial fire-detection and suppression system. Catch it early. Hold it until help arrives.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,10 +21,10 @@
       <img src="assets/logo.jpg" alt="FireWatch logo">
     </a>
     <ul>
-      <li><a href="#problem">Problem</a></li>
-      <li><a href="#plan">The Plan</a></li>
-      <li><a href="#how">How It Works</a></li>
-      <li><a href="#model">Business</a></li>
+      <li><a href="problem.html">Problem</a></li>
+      <li><a href="plan.html">The Plan</a></li>
+      <li><a href="how.html">How It Works</a></li>
+      <li><a href="business.html">Business</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="careers.html">Careers</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -77,171 +77,32 @@
   </div>
 </header>
 
-<section id="problem">
+<section id="explore">
   <div class="container">
-    <span class="section-tag">The Problem</span>
-    <h2>Wildfires are won or lost in the first hour</h2>
-    <p class="lead">A wildfire grows exponentially. While it's small, it's containable — but in remote terrain, both halves of the response are too slow. It takes too long to confirm a fire, and even longer for the first water or retardant to reach it. By the time planes, crews, and drones arrive, a spark has become a fire front.</p>
-    <div class="grid-3">
-      <div class="card">
-        <h3>Detection is too slow</h3>
-        <p>Satellites pass every few hours, towers need line of sight, and crews rely on someone reporting smoke. A remote ignition can burn unnoticed for 15–30 minutes or more before anyone confirms it.</p>
-      </div>
-      <div class="card">
-        <h3>The first response is even slower</h3>
-        <p>Once a fire is confirmed, water and retardant still have to travel to it. In the backcountry, aircraft, engines, and hand crews can be hours away — and every one of those minutes lets the fire grow.</p>
-      </div>
-      <div class="card">
-        <h3>Fire grows exponentially</h3>
-        <p>Wildfires spread fastest in their later stages. A few extra minutes early on is the difference between a spot fire and a megafire — and between a routine knockdown and a season-defining disaster.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="plan">
-  <div class="container">
-    <span class="section-tag">The Plan</span>
-    <h2>How FireWatch fights a fire</h2>
-    <p class="lead">The full system is a chain: towers watch the horizon, a mothership drone confirms and maps the fire, and a swarm of payload gliders contains it — all coordinated automatically and visible to the agencies responding. We're building it one proven layer at a time, starting with the mothership.</p>
-
-    <div class="roadmap">
-
-      <div class="roadmap-item">
-        <div class="roadmap-visual">
-          <svg width="260" height="220" viewBox="0 0 260 220" fill="none">
-            <circle cx="130" cy="180" r="6" fill="#D8352A"/>
-            <path d="M130 180 L130 60" stroke="#D8352A" stroke-width="2" stroke-dasharray="4 4"/>
-            <rect x="95" y="30" width="70" height="34" rx="4" stroke="#F4F4F5" stroke-width="2"/>
-            <circle cx="130" cy="47" r="9" stroke="#D8352A" stroke-width="2"/>
-            <circle cx="130" cy="47" r="3" fill="#D8352A"/>
-            <path d="M60 200 Q130 150 200 200" stroke="#8B8D93" stroke-width="1.5" stroke-dasharray="2 4"/>
-            <path d="M110 20 L130 5 L150 20" stroke="#F4F4F5" stroke-width="2" fill="none"/>
-            <text x="130" y="212" fill="#8B8D93" font-size="10" text-anchor="middle" font-family="Rajdhani">MOTHERSHIP · CONFIRM + RELAY</text>
-          </svg>
-        </div>
-        <div class="roadmap-text">
-          <div class="roadmap-phase">Phase 1 · Building Now</div>
-          <h3>Confirm — The Mothership</h3>
-          <p>A tower-based mothership drone flies to a suspected ignition, and its onboard thermal camera and AI confirm whether there's a fire, pinpoint its exact location, and map its edges. It relays a confirmed report to nearby crews through our monitoring software — turning a distant smoke sighting into precise, actionable coordinates in minutes.</p>
-          <span class="roadmap-status live">● In Development</span>
-        </div>
-      </div>
-
-      <div class="roadmap-item reverse">
-        <div class="roadmap-visual">
-          <svg width="260" height="220" viewBox="0 0 260 220" fill="none">
-            <circle cx="130" cy="110" r="40" stroke="#D8352A" stroke-width="1.5" opacity="0.5"/>
-            <circle cx="130" cy="110" r="70" stroke="#D8352A" stroke-width="1" opacity="0.3"/>
-            <circle cx="130" cy="110" r="5" fill="#F4F4F5"/>
-            <g stroke="#F4F4F5" stroke-width="1.5">
-              <line x1="130" y1="110" x2="70" y2="60"/>
-              <line x1="130" y1="110" x2="190" y2="60"/>
-              <line x1="130" y1="110" x2="60" y2="150"/>
-              <line x1="130" y1="110" x2="200" y2="150"/>
-              <line x1="130" y1="110" x2="130" y2="40"/>
-            </g>
-            <circle cx="70" cy="60" r="4" fill="#D8352A"/>
-            <circle cx="190" cy="60" r="4" fill="#D8352A"/>
-            <circle cx="60" cy="150" r="4" fill="#D8352A"/>
-            <circle cx="200" cy="150" r="4" fill="#D8352A"/>
-            <circle cx="130" cy="40" r="4" fill="#D8352A"/>
-            <text x="130" y="205" fill="#8B8D93" font-size="10" text-anchor="middle" font-family="Rajdhani">WATCH TOWERS · DETECT + DISPATCH</text>
-          </svg>
-        </div>
-        <div class="roadmap-text">
-          <div class="roadmap-phase">Phase 2</div>
-          <h3>Watch — Autonomous Towers</h3>
-          <p>Fire watch towers — partnered state towers or our own autonomous ones — carry cameras, thermal sights, and sensors that scan the horizon for smoke and heat. When the AI believes a fire has started, it dispatches the mothership to investigate on its own, no human trigger required. Each tower hosts the mothership and becomes the launch point for everything that follows.</p>
-          <span class="roadmap-status next">○ Next Up</span>
-        </div>
-      </div>
-
-      <div class="roadmap-item">
-        <div class="roadmap-visual">
-          <svg width="260" height="220" viewBox="0 0 260 220" fill="none">
-            <path d="M60 210 L110 40 L160 210 Z" fill="#141517" stroke="#8B8D93" stroke-width="1.5"/>
-            <rect x="95" y="20" width="30" height="18" rx="2" stroke="#F4F4F5" stroke-width="1.5"/>
-            <g>
-              <line x1="110" y1="30" x2="150" y2="60" stroke="#D8352A" stroke-width="1.5" stroke-dasharray="3 3"/>
-              <line x1="110" y1="30" x2="190" y2="90" stroke="#D8352A" stroke-width="1.5" stroke-dasharray="3 3"/>
-              <line x1="110" y1="30" x2="215" y2="140" stroke="#D8352A" stroke-width="1.5" stroke-dasharray="3 3"/>
-            </g>
-            <polygon points="148,58 156,60 150,66" fill="#D8352A"/>
-            <polygon points="188,88 196,90 190,96" fill="#D8352A"/>
-            <polygon points="213,138 221,140 215,146" fill="#D8352A"/>
-            <path d="M195 165 Q205 150 220 155 Q235 145 240 160 Q248 165 240 175 Q245 185 230 185 Q210 195 200 180 Q190 178 195 165Z" fill="#D8352A" opacity="0.85"/>
-            <text x="130" y="212" fill="#8B8D93" font-size="10" text-anchor="middle" font-family="Rajdhani">GLIDER SWARM · PAYLOAD CONTAINMENT</text>
-          </svg>
-        </div>
-        <div class="roadmap-text">
-          <div class="roadmap-phase">Phase 3</div>
-          <h3>Contain — The Glider Swarm</h3>
-          <p>Once the fire is confirmed, the mothership signals drone launchers at its tower and on surrounding mountaintops to release payload gliders. Each glider extends its wings, cruises to the fire at up to 80 mph, and uses its own thermal camera and AI to adjust course mid-flight before dropping a fire-suppressant payload. The mothership choreographs the whole swarm — flight paths, release points, and calling in more gliders when the fire demands it — holding the fire small until crews arrive with heavier resources.</p>
-          <span class="roadmap-status next">○ In Design</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section id="how">
-  <div class="container">
-    <span class="section-tag">Current Prototype</span>
-    <h2>How it works today</h2>
-    <p class="lead">The entire pipeline is self-contained. Both devices auto-connect and start streaming on boot — no manual setup, no cloud, no internet.</p>
-    <div class="pipeline">
-      <div class="pipe-step">
-        <div class="pipe-num">01</div>
-        <h4>Thermal Camera</h4>
-        <p>Reads 768 temperature points 4× per second. Detects heat invisible to the human eye.</p>
-      </div>
-      <div class="pipe-step">
-        <div class="pipe-num">02</div>
-        <h4>Drone Processor</h4>
-        <p>Onboard Pi processes the stream and transmits over a private radio link.</p>
-      </div>
-      <div class="pipe-step">
-        <div class="pipe-num">03</div>
-        <h4>HaLow Radio Link</h4>
-        <p>900 MHz link carries data kilometers with no cellular coverage needed.</p>
-      </div>
-      <div class="pipe-step">
-        <div class="pipe-num">04</div>
-        <h4>Ground Station</h4>
-        <p>Second Pi hosts a live web dashboard accessible from any browser.</p>
-      </div>
-      <div class="pipe-step">
-        <div class="pipe-num">05</div>
-        <h4>Live Alert</h4>
-        <p>Operator is alerted instantly when temperature exceeds threshold.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="model">
-  <div class="container">
-    <span class="section-tag">Business Model</span>
-    <h2>Built for the agencies that fight fires</h2>
-    <p class="lead">FireWatch is designed for local, state, and national governments — the fire and land-management agencies responsible for protecting wildland. It isn't a consumer product, though in principle it could cover rural communities far from help. We're pre-revenue today; this is how the model is built to work.</p>
-    <div class="model-grid">
-      <div class="model-card active">
-        <div class="model-tag">One-Time</div>
-        <h4>Setup &amp; Installation</h4>
-        <p>Standing up coverage for a region: mothership drones, tower sensors, and mountaintop launchers — either integrated into existing fire watch towers or deployed as our own autonomous ones.</p>
-      </div>
-      <div class="model-card">
-        <div class="model-tag">Annual</div>
-        <h4>System &amp; Software</h4>
-        <p>A yearly fee to keep the system maintained and the software current, including access to the monitoring platform for local and state authorities coordinating the response.</p>
-      </div>
-      <div class="model-card">
-        <div class="model-tag">Ongoing</div>
-        <h4>Payload &amp; Fleet Resupply</h4>
-        <p>The core recurring cost: refilling glider suppressant payloads and replacing the gliders staged across mountaintop launchers after each deployment, so the system is always ready for the next fire.</p>
-      </div>
+    <span class="section-tag">Explore</span>
+    <h2>The whole picture, in four parts</h2>
+    <p class="lead">The problem we're solving, the plan to solve it, how the prototype works today, and how FireWatch is built for the agencies that fight fires.</p>
+    <div class="explore-grid">
+      <a class="card" href="problem.html">
+        <h3>The Problem</h3>
+        <p>Why the first hour decides whether a wildfire is contained — or catastrophic.</p>
+        <span class="card-go">Read more</span>
+      </a>
+      <a class="card" href="plan.html">
+        <h3>The Plan</h3>
+        <p>Towers watch, a mothership confirms, and a glider swarm contains — in three phases.</p>
+        <span class="card-go">Read more</span>
+      </a>
+      <a class="card" href="how.html">
+        <h3>How It Works</h3>
+        <p>The self-contained detection prototype: thermal sensing, radio link, live ground station.</p>
+        <span class="card-go">Read more</span>
+      </a>
+      <a class="card" href="business.html">
+        <h3>Business</h3>
+        <p>Built for local, state, and national fire agencies — setup, support, and resupply.</p>
+        <span class="card-go">Read more</span>
+      </a>
     </div>
   </div>
 </section>

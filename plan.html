@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Plan — FireWatch</title>
+<meta name="description" content="How FireWatch fights a fire: watch towers detect, a mothership drone confirms and maps, and a glider swarm contains — in three phases.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a class="brand-mark" href="index.html">
+      <img src="assets/logo.jpg" alt="FireWatch logo">
+    </a>
+    <ul>
+      <li><a href="problem.html">Problem</a></li>
+      <li><a href="plan.html" class="active">The Plan</a></li>
+      <li><a href="how.html">How It Works</a></li>
+      <li><a href="business.html">Business</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="container">
+    <span class="section-tag">The Plan</span>
+    <h1>How FireWatch fights a fire</h1>
+    <p>The full system is a chain: towers watch the horizon, a mothership drone confirms and maps the fire, and a swarm of payload gliders contains it — all coordinated automatically and visible to the agencies responding. We're building it one proven layer at a time, starting with the mothership.</p>
+  </div>
+</header>
+
+<section style="border-top: none; padding-top: 20px;">
+  <div class="container">
+    <div class="roadmap">
+
+      <div class="roadmap-item">
+        <div class="roadmap-visual">
+          <svg width="260" height="220" viewBox="0 0 260 220" fill="none">
+            <!-- terrain: high ground under tower, lower elevation toward the fire -->
+            <path d="M0 150 L52 138 L94 150 L150 178 L210 172 L260 186" stroke="#8B8D93" stroke-width="1.5" fill="none" opacity="0.55"/>
+            <!-- fire lookout tower on the high ground (left) -->
+            <g stroke="#F4F4F5" stroke-width="1.5" fill="none">
+              <path d="M46 138 L53 92 M74 138 L67 92"/>
+              <path d="M46 138 L67 92 M74 138 L53 92" stroke="#8B8D93" stroke-width="1" opacity="0.7"/>
+              <path d="M50 117 L70 117" stroke="#8B8D93" stroke-width="1" opacity="0.7"/>
+              <rect x="49" y="79" width="22" height="15"/>
+              <path d="M47 79 L60 70 L73 79"/>
+            </g>
+            <line x1="60" y1="70" x2="60" y2="62" stroke="#8B8D93" stroke-width="1"/>
+            <circle cx="60" cy="60" r="2" fill="#D8352A"/>
+            <!-- mothership drone descending along the flight path -->
+            <g stroke="#F4F4F5" stroke-width="1.5">
+              <line x1="118" y1="100" x2="142" y2="108"/>
+              <ellipse cx="118" cy="99" rx="6" ry="2"/>
+              <ellipse cx="142" cy="107" rx="6" ry="2"/>
+            </g>
+            <circle cx="130" cy="104" r="2.5" fill="#141517" stroke="#F4F4F5" stroke-width="1"/>
+            <!-- thermal camera cone aimed down at the fire -->
+            <path d="M131 107 L120 130 L142 128 Z" fill="#ff7a18" opacity="0.12"/>
+            <!-- descending flight path, tower -> fire -->
+            <path d="M71 82 C110 96 152 118 196 150" stroke="#D8352A" stroke-width="1.5" stroke-dasharray="4 4" fill="none" opacity="0.85"/>
+            <!-- the fire at lower elevation, being mapped -->
+            <ellipse cx="200" cy="151" rx="21" ry="12" stroke="#ff7a18" stroke-width="1" stroke-dasharray="3 3" fill="none" opacity="0.6"/>
+            <path d="M175 137 L175 132 L181 132 M225 137 L225 132 L219 132 M175 165 L175 170 L181 170 M225 165 L225 170 L219 170" stroke="#8B8D93" stroke-width="1" fill="none" opacity="0.7"/>
+            <path d="M196 151 C193 143 200 141 199 133 C205 139 208 147 204 153 C202 157 197 157 196 151 Z" fill="#D8352A" opacity="0.9"/>
+            <circle cx="201" cy="153" r="4" fill="#D8352A"/>
+            <text x="130" y="210" fill="#8B8D93" font-size="10" text-anchor="middle" font-family="Rajdhani">MOTHERSHIP · CONFIRM + MAP</text>
+          </svg>
+        </div>
+        <div class="roadmap-text">
+          <div class="roadmap-phase">Phase 1 · Building Now</div>
+          <h3>Confirm — The Mothership</h3>
+          <p>A tower-based mothership drone flies out and drops to a lower elevation over a suspected ignition. Its onboard thermal camera and AI confirm whether there's a fire, pinpoint its exact location, and map its edges — then relay a confirmed report to nearby crews through our monitoring software. A distant smoke sighting becomes precise, actionable coordinates in minutes.</p>
+          <span class="roadmap-status live">● In Development</span>
+        </div>
+      </div>
+
+      <div class="roadmap-item reverse">
+        <div class="roadmap-visual">
+          <svg width="260" height="220" viewBox="0 0 260 220" fill="none">
+            <!-- ridge line -->
+            <path d="M0 182 L50 172 L120 188 L190 170 L260 182" stroke="#8B8D93" stroke-width="1.5" fill="none" opacity="0.55"/>
+            <!-- watch tower A (left) -->
+            <g stroke="#F4F4F5" stroke-width="1.4" fill="none">
+              <path d="M32 174 L38 124 M50 174 L44 124"/>
+              <path d="M32 174 L44 124 M50 174 L38 124" stroke="#8B8D93" stroke-width="1" opacity="0.7"/>
+              <rect x="34" y="113" width="14" height="11"/>
+              <path d="M32 113 L41 106 L50 113"/>
+            </g>
+            <!-- watch tower B (right) -->
+            <g stroke="#F4F4F5" stroke-width="1.4" fill="none">
+              <path d="M210 176 L216 122 M228 176 L222 122"/>
+              <path d="M210 176 L222 122 M228 176 L216 122" stroke="#8B8D93" stroke-width="1" opacity="0.7"/>
+              <rect x="212" y="111" width="14" height="11"/>
+              <path d="M210 111 L219 104 L228 111"/>
+            </g>
+            <!-- a fire starting in the valley, with smoke rising -->
+            <path d="M129 138 C124 128 134 122 128 112 C123 105 132 99 129 92" stroke="#8B8D93" stroke-width="1.5" fill="none" opacity="0.45"/>
+            <path d="M125 152 C122 144 129 142 128 135 C133 140 136 147 132 154 C130 158 126 158 125 152 Z" fill="#D8352A" opacity="0.9"/>
+            <circle cx="130" cy="153" r="3.5" fill="#D8352A"/>
+            <!-- detection ping ring around the new fire -->
+            <circle cx="130" cy="151" r="16" stroke="#ff7a18" stroke-width="1" stroke-dasharray="3 4" fill="none" opacity="0.5"/>
+            <!-- triangulation beams from both towers catching the fire -->
+            <path d="M41 113 L129 150" stroke="#D8352A" stroke-width="1.3" stroke-dasharray="4 4" fill="none" opacity="0.8"/>
+            <path d="M219 111 L131 150" stroke="#D8352A" stroke-width="1.3" stroke-dasharray="4 4" fill="none" opacity="0.8"/>
+            <text x="130" y="210" fill="#8B8D93" font-size="10" text-anchor="middle" font-family="Rajdhani">WATCH TOWERS · DETECT + DISPATCH</text>
+          </svg>
+        </div>
+        <div class="roadmap-text">
+          <div class="roadmap-phase">Phase 2</div>
+          <h3>Watch — Autonomous Towers</h3>
+          <p>Fire watch towers — partnered state towers or our own autonomous ones — carry cameras, thermal sights, and sensors that scan the horizon for smoke and heat. When the AI believes a fire has started, it triangulates the location and dispatches the mothership to investigate on its own, no human trigger required. Each tower hosts the mothership and becomes the launch point for everything that follows.</p>
+          <span class="roadmap-status next">○ Next Up</span>
+        </div>
+      </div>
+
+      <div class="roadmap-item">
+        <div class="roadmap-visual">
+          <svg width="260" height="220" viewBox="0 0 260 220" fill="none">
+            <!-- terrain -->
+            <path d="M0 176 L60 168 L110 180 L170 176 L212 184 L260 176" stroke="#8B8D93" stroke-width="1.5" fill="none" opacity="0.55"/>
+            <!-- firewatch tower (left) -->
+            <g stroke="#F4F4F5" stroke-width="1.4" fill="none">
+              <path d="M34 168 L40 116 M52 168 L46 116"/>
+              <path d="M34 168 L46 116 M52 168 L40 116" stroke="#8B8D93" stroke-width="1" opacity="0.7"/>
+              <rect x="36" y="105" width="14" height="11"/>
+              <path d="M34 105 L43 98 L52 105"/>
+            </g>
+            <!-- mothership drone hovering above the tower -->
+            <g stroke="#F4F4F5" stroke-width="1.5">
+              <line x1="31" y1="74" x2="55" y2="86"/>
+              <line x1="31" y1="86" x2="55" y2="74"/>
+              <ellipse cx="31" cy="74" rx="5" ry="2"/>
+              <ellipse cx="55" cy="74" rx="5" ry="2"/>
+              <ellipse cx="31" cy="86" rx="5" ry="2"/>
+              <ellipse cx="55" cy="86" rx="5" ry="2"/>
+            </g>
+            <rect x="39" y="76" width="8" height="8" rx="1" fill="#141517" stroke="#F4F4F5" stroke-width="1.2"/>
+            <path d="M43 84 L43 105" stroke="#8B8D93" stroke-width="1" stroke-dasharray="2 3" opacity="0.5"/>
+            <!-- three glider launch trajectories, mothership -> fire -->
+            <path d="M56 80 Q140 66 198 148" stroke="#D8352A" stroke-width="1.3" stroke-dasharray="4 4" fill="none" opacity="0.8"/>
+            <path d="M56 82 Q142 104 200 156" stroke="#D8352A" stroke-width="1.3" stroke-dasharray="4 4" fill="none" opacity="0.8"/>
+            <path d="M56 84 Q150 132 202 162" stroke="#D8352A" stroke-width="1.3" stroke-dasharray="4 4" fill="none" opacity="0.8"/>
+            <!-- glider drones in flight (swept-wing darts pointed at the fire) -->
+            <g fill="#F4F4F5">
+              <path d="M112 72 L126 78 L116 80 L118 76 Z"/>
+              <path d="M118 100 L132 107 L122 109 L124 104 Z"/>
+              <path d="M126 130 L140 138 L130 139 L132 134 Z"/>
+            </g>
+            <!-- suppressant released over the fire -->
+            <ellipse cx="205" cy="150" rx="18" ry="8" stroke="#F4F4F5" stroke-width="1" stroke-dasharray="3 3" fill="none" opacity="0.4"/>
+            <g fill="#ff7a18">
+              <circle cx="197" cy="152" r="1.5"/>
+              <circle cx="202" cy="158" r="1.5"/>
+              <circle cx="207" cy="152" r="1.5"/>
+              <circle cx="200" cy="162" r="1.5"/>
+              <circle cx="211" cy="159" r="1.5"/>
+            </g>
+            <!-- the target fire (right) -->
+            <path d="M203 169 C200 160 208 158 206 150 C213 156 216 166 211 172 C208 176 205 175 203 169 Z" fill="#D8352A" opacity="0.9"/>
+            <circle cx="208" cy="170" r="4" fill="#D8352A"/>
+            <text x="130" y="210" fill="#8B8D93" font-size="10" text-anchor="middle" font-family="Rajdhani">GLIDER SWARM · PAYLOAD CONTAINMENT</text>
+          </svg>
+        </div>
+        <div class="roadmap-text">
+          <div class="roadmap-phase">Phase 3</div>
+          <h3>Contain — The Glider Swarm</h3>
+          <p>Once the fire is confirmed, the mothership signals drone launchers at its tower and on surrounding mountaintops to release payload gliders. Each glider extends its wings, cruises to the fire at up to 80 mph, and uses its own thermal camera and AI to adjust course mid-flight before dropping a fire-suppressant payload. The mothership choreographs the whole swarm — flight paths, release points, and calling in more gliders when the fire demands it — holding the fire small until crews arrive with heavier resources.</p>
+          <span class="roadmap-status next">○ In Design</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="container">
+    <span class="section-tag">Contact</span>
+    <h2>Let's talk</h2>
+    <p>Fire agencies, land managers, industrial safety teams, and partners — reach out.</p>
+    <a class="cta-btn" href="mailto:amazloom@firewatchaero.com">amazloom@firewatchaero.com</a>
+    <div class="fine-print">FireWatch © 2026. Prototype stage — not yet available for purchase or deployment.</div>
+  </div>
+</footer>
+
+<script src="assets/fx.js" defer></script>
+</body>
+</html>

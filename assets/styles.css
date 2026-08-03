@@ -277,6 +277,18 @@ section > .container > p.lead {
 .card p { color: var(--grey); font-size: 0.95rem; }
 .card .x { color: var(--red-glow); }
 
+/* EXPLORE (landing page) — clickable link cards */
+.explore-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+a.card { text-decoration: none; color: inherit; display: block; }
+a.card h3 { font-size: 1.15rem; }
+.card-go {
+  display: inline-flex; align-items: center; gap: 7px; margin-top: 18px;
+  color: var(--red-glow); font-family: 'Orbitron', sans-serif;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+}
+.card-go::after { content: "\2192"; transition: transform 0.3s var(--ease); }
+a.card:hover .card-go::after { transform: translateX(5px); }
+
 /* PIPELINE */
 .pipeline {
   display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 20px;
@@ -439,7 +451,7 @@ footer p { color: var(--grey); margin-bottom: 28px; }
 }
 
 @media (max-width: 900px) {
-  .grid-3, .model-grid { grid-template-columns: 1fr; }
+  .grid-3, .model-grid, .explore-grid { grid-template-columns: 1fr; }
   .pipeline { grid-template-columns: 1fr 1fr; }
   .roadmap-item, .roadmap-item.reverse { grid-template-columns: 1fr; direction: ltr; }
   .about-grid { grid-template-columns: 1fr; }
