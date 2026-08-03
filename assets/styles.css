@@ -324,10 +324,12 @@ a.card:hover .card-go::after { transform: translateX(5px); }
     radial-gradient(120% 120% at 50% 0%, rgba(216,53,42,0.06), transparent 60%),
     var(--panel);
   border: 1px solid var(--line); border-radius: 8px;
-  padding: 30px; display: flex; align-items: center; justify-content: center;
-  min-height: 260px; position: relative; overflow: hidden;
+  padding: 28px; display: flex; align-items: center; justify-content: center;
+  min-height: 340px; position: relative; overflow: hidden;
   transition: border-color 0.4s, box-shadow 0.4s;
 }
+/* Scale the diagrams up to fill the column now that each has its own page */
+.roadmap-visual svg { width: 100%; height: auto; max-width: 480px; }
 .roadmap-visual:hover { border-color: rgba(216,53,42,0.4); box-shadow: 0 20px 60px -30px rgba(216,53,42,0.6); }
 /* Flowing dashed comms/flight lines inside the SVGs */
 .roadmap-visual svg [stroke-dasharray] { animation: dashFlow 2.6s linear infinite; }
