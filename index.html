@@ -33,7 +33,26 @@
 </nav>
 
 <header class="hero">
+  <canvas id="ember-canvas" class="ember-canvas" aria-hidden="true"></canvas>
   <div class="hero-glow"></div>
+  <svg class="hero-reticle" viewBox="0 0 600 600" fill="none" aria-hidden="true">
+    <circle class="ring ring-slow" cx="300" cy="300" r="290" stroke="#D8352A" stroke-width="1" stroke-dasharray="2 10" opacity="0.6"/>
+    <circle class="ring ring-fast" cx="300" cy="300" r="220" stroke="#ff7a18" stroke-width="1" stroke-dasharray="1 14" opacity="0.5"/>
+    <circle cx="300" cy="300" r="150" stroke="#8B8D93" stroke-width="0.75" opacity="0.35"/>
+    <g stroke="#D8352A" stroke-width="1" opacity="0.5">
+      <line x1="300" y1="70" x2="300" y2="120"/>
+      <line x1="300" y1="480" x2="300" y2="530"/>
+      <line x1="70" y1="300" x2="120" y2="300"/>
+      <line x1="480" y1="300" x2="530" y2="300"/>
+    </g>
+    <path class="sweep" d="M300 300 L300 40 A260 260 0 0 1 486 114 Z" fill="url(#sweepGrad)" opacity="0.18"/>
+    <defs>
+      <linearGradient id="sweepGrad" x1="300" y1="300" x2="300" y2="40" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#ff7a18" stop-opacity="0"/>
+        <stop offset="1" stop-color="#ff4433"/>
+      </linearGradient>
+    </defs>
+  </svg>
   <div class="container">
     <img src="assets/logo.jpg" alt="FireWatch" class="hero-logo">
     <h1>FIREWATCH</h1>
@@ -237,5 +256,6 @@
   </div>
 </footer>
 
+<script src="assets/fx.js" defer></script>
 </body>
 </html>
